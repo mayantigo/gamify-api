@@ -27,19 +27,26 @@ public final class App {
                                 "/login", new TkFork(new FkMethods("POST", new Login()))
                         ),
                         new FkRegex(
-                                "/logout", new TkFork(new FkMethods("POST", new Logout()))
+                                "/logout", new TkFork(
+                                        new FkMethods(
+                                                "POST", new Logout()))
                         ),
                         new FkRegex(
-                                "/worlds", new TkFork(new FkMethods("GET, PUT, POST, DELETE", new Current()))
+                                "/worlds", new TkFork(
+                                        new FkMethods(
+                                                "GET, PUT, POST, DELETE", new Current()))
                         ),
                         new FkRegex(
-                                "/worlds/users/(?<user>[a-z]+)", new TkFork(new FkMethods("GET, POST, DELETE", new Current()))
+                                "/worlds/users/(?<user>[a-z]+)", new TkFork(
+                                        new FkMethods(
+                                                "GET, POST, DELETE", new Current()))
                         ),
                         new FkRegex(
                                 "/worlds/users/", new TkFork(new FkMethods("PUT", new Current()))
                         ),
                         new FkRegex(
-                                "/worlds/users/(?<user>[a-z]+)/badgets/(?<badget>[a-z]+)", new TkFork(new FkMethods("PUT", new Current()))
+                                "/worlds/users/(?<user>[a-z]+)/badgets/(?<badget>[a-z]+)", new TkFork(
+                                        new FkMethods("PUT", new Current()))
                         )
                 ), 8080
         ).start(Exit.NEVER);
